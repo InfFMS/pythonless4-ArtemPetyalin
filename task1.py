@@ -10,3 +10,8 @@
 # ********
 # *********
 # **********
+N = int(input())
+star = str('*')
+for i in range (N):
+    print (star)
+    star = star + '*'
