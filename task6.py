@@ -9,3 +9,28 @@
 # Вывод:
 # 5 3
 
+M = int(input())
+N = int(input())
+
+def drober(a, b):
+    a0 = a
+    b0 = b
+
+    if a == b:
+        return print('1 1')
+
+    while a != b:
+
+        if a > b:
+            a -= b
+
+        if b > a:
+            b -= a
+
+    print(str(int(a0 / a)), str(int(b0 / b)))
+
+drober(M, N)
+
+
+
+
