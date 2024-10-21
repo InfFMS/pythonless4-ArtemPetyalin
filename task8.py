@@ -13,23 +13,34 @@ def razlogator(b):
     divs = []
 
     def dividors(c):
+        i = 2
 
-        for i in range(2, int(c ** 0.5)):
+        while c % i != 0 and i < c:
+            i += 1
 
-            if c % i == 0:
-                divs.append(i)
-                dividors(c / i)
-                c = c / i
-                print(i)
+        if c != 1:
+            divs.append(i)
 
-    dividors(b)
+        c = c / i
 
-    s = ''
+        if c != 1:
+            dividors(c)
 
-    for j in range(len(divs)):
-        s = s + str(divs[j]) + '*'
+    if b >= 2:
+        dividors(b)
+        s = ''
 
-    s = s[:-2]
-    print(s)
+        for j in range(len(divs)):
+            s = s + str(divs[j]) + '*'
+
+        s = s[:-1]
+        print(s)
+
+    else:
+        print('error')
+
+
+
+
 
 razlogator(a)
