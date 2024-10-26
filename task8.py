@@ -7,40 +7,33 @@
 # Вывод:
 # 2*3*3*3*7
 
-a = int(input())
+N = int(input())
 
-def razlogator(b):
+def razlogator(a):
+
+    if a == 1:
+        return 1
+
     divs = []
+    i = 2
 
-    def dividors(c):
-        i = 2
+    while a != 1:
 
-        while c % i != 0 and i < c:
+        if a % i == 0:
+            a = a // i
+            divs.append(i)
+            i = 2
+
+        elif a % i != 0:
             i += 1
 
-        if c != 1:
-            divs.append(i)
+    answer = ''
 
-        c = c / i
+    for j in range(len(divs)):
+        answer = answer + str(divs[j]) + '*'
 
-        if c != 1:
-            dividors(c)
+    answer = answer[:-1]
 
-    if b >= 2:
-        dividors(b)
-        s = ''
+    return answer
 
-        for j in range(len(divs)):
-            s = s + str(divs[j]) + '*'
-
-        s = s[:-1]
-        print(s)
-
-    else:
-        print('error')
-
-
-
-
-
-razlogator(a)
+print(razlogator(N))

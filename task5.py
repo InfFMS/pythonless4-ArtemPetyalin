@@ -5,15 +5,21 @@
 # Идея задачи реализовать алгоритм,
 # который будет работать для любого введенного натурального числа.
 a = int(input())
-s = str(a)
-
 
 def reverse(s):
-    answer = ''
+    answer = 0
+    razr = 0
+    i = 1
 
-    for i in range(1, len(s) + 1):
-        answer = answer + s[-i]
+    while s // i != 0:
+        i = i * 10
+        razr += 1
+        print('razr', razr)
+
+    for j in range(1, razr + 1):
+        answer += s // (10 ** (razr - j)) * (10 ** (j - 1))
+        s = s % 10 ** (razr - j)
 
     return answer
 
-print(reverse(s))
+print(reverse(a))

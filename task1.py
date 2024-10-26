@@ -11,7 +11,12 @@
 # *********
 # **********
 N = int(input())
-star = str('*')
-for i in range (N):
-    print (star)
-    star = star + '*'
+
+def triangle(a):
+    star = str('*')
+
+    for i in range (N):
+        print (star)
+        star = star + '*'
+
+triangle(N)
