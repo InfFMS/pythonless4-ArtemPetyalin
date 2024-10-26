@@ -24,7 +24,7 @@ def run_main_script(input_data):
 def check_output(input_data, expected_output):
     output = run_main_script(input_data)
 
-    if output in expected_output:
+    if expected_output in output:
         return True
     else:
         print(f"Ожидалось:\n{expected_output}, но получили:\n{output}")

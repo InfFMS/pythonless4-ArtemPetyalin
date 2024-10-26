@@ -4,3 +4,22 @@
 # Пользоваться input()[::-1] запрещено!
 # Идея задачи реализовать алгоритм,
 # который будет работать для любого введенного натурального числа.
+a = int(input())
+
+def reverse(s):
+    answer = 0
+    razr = 0
+    i = 1
+
+    while s // i != 0:
+        i = i * 10
+        razr += 1
+        print('razr', razr)
+
+    for j in range(1, razr + 1):
+        answer += s // (10 ** (razr - j)) * (10 ** (j - 1))
+        s = s % 10 ** (razr - j)
+
+    return answer
+
+print(reverse(a))
